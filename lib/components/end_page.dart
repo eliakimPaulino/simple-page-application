@@ -25,7 +25,7 @@ class EndPage extends StatelessWidget {
             padding: EdgeInsets.all(48.0),
             child: Text(
               '''A Contact Mais® não é uma Instituição Financeira. Atuamos como Correspondente Bancário prestando Serviços de Intermediação e Atendimento aos Clientes de nossos Parceiros. A atividade de Correspondente Bancário é regulada pelo Banco Central do Brasil nos termos da Resolução nº 3.954, de fevereiro de 2011.\n\nSeguimos em constante atualizações e contamos com uma Completa Infraestrutura para Atender de forma Diferenciada nossos Clientes, nos destacando pela Excelência nos Serviços Prestados com Agilidade e Eficiencia.''',
-              textAlign: TextAlign.justify,
+              textAlign: TextAlign.start,
               style: GoogleFonts.roboto(textStyle: style),
             ),
           ),
