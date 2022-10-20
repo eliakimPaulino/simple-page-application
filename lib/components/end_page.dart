@@ -32,6 +32,7 @@ class EndPage extends StatelessWidget {
           SizedBox(
             child: Text(
               'CONTACT MAIS Tecnologia e Comunicação ®',
+              textAlign: TextAlign.center,
               style: GoogleFonts.roboto(
                 textStyle: const TextStyle(
                     fontSize: 22,

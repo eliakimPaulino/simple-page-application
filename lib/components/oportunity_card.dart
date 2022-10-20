@@ -79,7 +79,7 @@ class CardOportunity extends StatelessWidget {
                       text,
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.start,
                       style: const TextStyle(
                         fontSize: 19,
                         color: Colors.black87,
