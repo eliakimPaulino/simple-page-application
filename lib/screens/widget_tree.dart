@@ -127,7 +127,7 @@ class _WidgetTreeState extends State<WidgetTree> {
                           cookie.set(
                             'Kz_09Mn',
                             'T3M_p0r4r1',
-                            maxAge: const Duration(seconds: 1),
+                            maxAge: const Duration(days: 1),
                           );
                         },
                       );
