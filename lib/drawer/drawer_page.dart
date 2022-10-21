@@ -75,6 +75,34 @@ class _DrawerPageState extends State<DrawerPage> {
                           setState(() {
                             _currentIndex = index;
                           });
+                          if (__buttonsNames[index].presentation != null) {
+                            showDialog(
+                              context: context,
+                              builder: (builder) => AlertDialog(
+                                contentPadding: const EdgeInsets.all(20.0),
+                                backgroundColor: Colors.deepOrange,
+                                scrollable: true,
+                                title: const Text(
+                                  'Serviços',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                content: Text(
+                                  __buttonsNames[index].presentation,
+                                  textAlign: TextAlign.start,
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context),
+                                    child: const Text(
+                                      'Fechar',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }
                         },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -94,9 +122,11 @@ class _DrawerPageState extends State<DrawerPage> {
 
 class MenuOptions {
   String title;
+  String presentation;
   IconData icon;
   MenuOptions({
     required this.title,
+    required this.presentation,
     required this.icon,
   });
 }
@@ -104,7 +134,19 @@ class MenuOptions {
 int _currentIndex = 0;
 
 List<MenuOptions> __buttonsNames = [
-  MenuOptions(title: 'Início', icon: Icons.home),
-  MenuOptions(title: 'Serviços', icon: Icons.supervised_user_circle_outlined),
-  MenuOptions(title: 'Sobre', icon: Icons.add_business_outlined),
+  // MenuOptions(title: 'Início', icon: Icons.home, presentation: ''),
+  MenuOptions(
+      title: 'Serviços',
+      icon: Icons.supervised_user_circle_outlined,
+      presentation:
+          '''Nosso time está preparado para entender a sua necessidade e atendê-lo(a) com os seguintes serviços:\n 
+- Empréstimo com débito na conta de luz: Crédito Pessoal com Débito na Conta de Luz, e Limites Personalizados!
+- Empréstimo Consignado INSS: Empréstimo facilitado para você que é Aposentado e Pensionista, BPC/LOAS.
+- Crédito Pessoal no boleto: Crédito Pessoal no Boleto, com Limites Personalizados! Ideal para quem tem Carteira Assinada!
+- Cartão Benefício INSS: O Cartão Benefício é um Cartão de Crédito consignado, sem Anuidade e com desconto de parte do saldo da fautura na folha de pagamento!'''),
+  MenuOptions(
+      title: 'Sobre',
+      icon: Icons.add_business_outlined,
+      presentation:
+          '''A Contact Mais® não é uma Instituição Financeira. Atuamos como Correspondente Bancário prestando Serviços de Intermediação e Atendimento aos Clientes de nossos Parceiros. A atividade de Correspondente Bancário é regulada pelo Banco Central do Brasil nos termos da Resolução nº 3.954, de fevereiro de 2011.\n\nSeguimos em constante atualizações e contamos com uma Completa Infraestrutura para Atender de forma Diferenciada nossos Clientes, nos destacando pela Excelência nos Serviços Prestados com Agilidade e Eficiência.'''),
 ];
