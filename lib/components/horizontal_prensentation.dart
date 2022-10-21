@@ -23,6 +23,46 @@ class HorizontalPresentation extends StatelessWidget {
               ),
             ),
             Positioned(
+              top: 310,
+              right: 10,
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (builder) => AlertDialog(
+                      contentPadding: const EdgeInsets.all(20.0),
+                      backgroundColor: const Color.fromRGBO(28, 79, 156, 1),
+                      title: const Text(
+                        'Atendimento em Libras',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      content: const Text(
+                        'Nosso time está preparado para atendê-lo(a) em Libras!',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Fechar'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/img/logoLS.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
               left: MediaQuery.of(context).size.width / 18,
               child: SizedBox(
                 height: MediaQuery.of(context).size.height / 1.2,

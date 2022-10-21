@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'media_contact.dart';
 import 'policy_page.dart';
 import 'phone_contact.dart';
 
@@ -22,7 +23,7 @@ class EndPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.all(48.0),
+            padding: EdgeInsets.all(16.0),
             child: Text(
               '''A Contact Mais® não é uma Instituição Financeira. Atuamos como Correspondente Bancário prestando Serviços de Intermediação e Atendimento aos Clientes de nossos Parceiros. A atividade de Correspondente Bancário é regulada pelo Banco Central do Brasil nos termos da Resolução nº 3.954, de fevereiro de 2011.\n\nSeguimos em constante atualizações e contamos com uma Completa Infraestrutura para Atender de forma Diferenciada nossos Clientes, nos destacando pela Excelência nos Serviços Prestados com Agilidade e Eficiencia.''',
               textAlign: TextAlign.start,
@@ -47,26 +48,21 @@ class EndPage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: GoogleFonts.roboto(
                 textStyle: const TextStyle(
-                    fontSize: 16,
-                    // leadingDistribution: TextLeadingDistribution.proportional,
-                    ),
+                  fontSize: 16,
+                  // leadingDistribution: TextLeadingDistribution.proportional,
+                ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Wrap(
-              spacing: 50,
-              runSpacing: 30,
-              runAlignment: WrapAlignment.spaceBetween,
-              crossAxisAlignment: WrapCrossAlignment.start,
-              alignment: WrapAlignment.spaceBetween,
-              children: [
-                // containerEndereco(context),
-                containerContato(context),
-                containerRedesSociais(context),
-              ],
-            ),
+          Column(
+            children: [
+              const SizedBox(height: 20),
+              containerContato(context),
+              const SizedBox(height: 20),
+              // containerRedesSociais(context),
+              wrapedSocialMedia(context),
+              const SizedBox(height: 20),
+            ],
           ),
           const SizedBox(height: 15),
           Container(
@@ -98,30 +94,14 @@ class EndPage extends StatelessWidget {
   }
 }
 
-Widget containerEndereco(context) {
-  return Container(
-    alignment: Alignment.center,
-    color: Colors.orangeAccent,
-    height: 250.0,
-    width: 200.0,
-    child: Text(
-      '''CNPJ 23.502.238/0001-10
-Rua Domingues Ribas, 795 Taubaté /SP\n
-Contact Mais © 2022''',
-      style: GoogleFonts.roboto(
-        textStyle: const TextStyle(fontSize: 16),
-      ),
-    ),
-  );
-}
-
 Widget containerContato(context) {
-  return SizedBox(
-    height: 250.0,
-    width: 200.0,
-    child: Column(
+  return Container(
+    // color: Colors.blue,
+    height: 30.0,
+    width: 770.0,
+    child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         PhoneContactTap(path: '08008801851', textPhone: '0800 880 1851'),
         SizedBox(height: 15),
@@ -134,124 +114,92 @@ Widget containerContato(context) {
 }
 
 Widget containerRedesSociais(context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      SizedBox(
-        height: 300.0,
-        width: 200.0,
-        child: ListView(
-          children: [
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.1),
-              onTap: () {
-                final url = Uri.parse('https://www.facebook.com/GiuliaMRosa');
-                openBrowserURL(url: url);
-              },
-              leading: FaIcon(FontAwesomeIcons.facebookF,
-                  size: 20, color: Colors.black),
-              title: Container(
-                width: 25.0,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                child: Text(
-                  'Facebook',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.1),
-              onTap: () {
-                final url = Uri.parse('https://www.instagram.com/contactmais/');
-                openBrowserURL(url: url);
-              },
-              leading: FaIcon(FontAwesomeIcons.instagram,
-                  size: 20, color: Colors.black),
-              title: Container(
-                width: 25.0,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                child: Text(
-                  'Instagram',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.1),
-              onTap: () {
-                // final url = Uri.parse('https://wa.link/3oyyu7');
-                const String url = 'https://wa.link/3oyyu7';
-                openBrowserURLolder(url: url);
-              },
-              leading: FaIcon(FontAwesomeIcons.whatsapp,
-                  size: 20, color: Colors.black),
-              title: Container(
-                width: 25.0,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                child: Text(
-                  'WhatsApp',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.1),
-              onTap: () {
-                final url = Uri.parse(
-                    'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127');
-                openBrowserURL(url: url);
-              },
-              leading: FaIcon(FontAwesomeIcons.locationDot,
-                  size: 20, color: Colors.black),
-              title: Container(
-                width: 25.0,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(5.0)),
-                child: Text(
-                  'Localização',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(0.1),
-              onTap: () {
-                final url = Uri(
-                    scheme: 'mailto',
-                    path: 'mailto:contato@contactmais.com.br',
-                    queryParameters: {
-                      'subject': 'Gostaria de saber mais sobre os produtos'
-                    });
-                openBrowserURL(url: url);
-              },
-              leading: FaIcon(FontAwesomeIcons.envelope,
-                  size: 20, color: Colors.black),
-              title: Container(
-                width: 25.0,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-                child: Text(
-                  'Mail',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(fontSize: 16),
-                  ),
-                ),
-              ),
-            ),
-          ],
+  return Container(
+    // color: Colors.blue,
+    height: 30.0,
+    width: 770,
+    // width: MediaQuery.of(context).size.width,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const [
+        MediaContactTap(
+          path: 'https://www.facebook.com/GiuliaMRosa',
+          title: 'Facebook',
+          icon: FaIcon(FontAwesomeIcons.facebookF,
+              size: 15, color: Colors.orangeAccent),
         ),
+        MediaContactTap(
+          path: 'https://www.instagram.com/contactmais/',
+          title: 'Instagram',
+          icon: FaIcon(FontAwesomeIcons.instagram,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path: 'https://wa.link/3oyyu7',
+          title: 'Whatsapp',
+          icon: FaIcon(FontAwesomeIcons.whatsapp,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path:
+              'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
+          title: 'Localização',
+          icon: FaIcon(FontAwesomeIcons.locationDot,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path: 'mailto:contato@contactmais.com.br',
+          title: 'E-Mail',
+          icon: FaIcon(FontAwesomeIcons.envelope,
+              size: 15, color: Colors.orangeAccent),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget wrapedSocialMedia(context) {
+  return Wrap(
+    direction: Axis.horizontal,
+    clipBehavior: Clip.hardEdge,
+    spacing: 20,
+    //Vertical spacing when the widget shift to next line
+    runSpacing: 20,
+    runAlignment: WrapAlignment.center,
+    crossAxisAlignment: WrapCrossAlignment.center,
+    alignment: WrapAlignment.center,
+    children: const [
+      MediaContactTap(
+        path: 'https://www.facebook.com/GiuliaMRosa',
+        title: 'Facebook',
+        icon: FaIcon(FontAwesomeIcons.facebookF,
+            size: 15, color: Colors.orangeAccent),
+      ),
+      MediaContactTap(
+        path: 'https://www.instagram.com/contactmais/',
+        title: 'Instagram',
+        icon: FaIcon(FontAwesomeIcons.instagram,
+            size: 15, color: Colors.orangeAccent),
+      ),
+      MediaContactTap(
+        path: 'https://wa.link/3oyyu7',
+        title: 'Whatsapp',
+        icon: FaIcon(FontAwesomeIcons.whatsapp,
+            size: 15, color: Colors.orangeAccent),
+      ),
+      MediaContactTap(
+        path:
+            'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
+        title: 'Localização',
+        icon: FaIcon(FontAwesomeIcons.locationDot,
+            size: 15, color: Colors.orangeAccent),
+      ),
+      MediaContactTap(
+        path: 'mailto:contato@contactmais.com.br',
+        title: 'E-Mail',
+        icon: FaIcon(FontAwesomeIcons.envelope,
+            size: 15, color: Colors.orangeAccent),
       ),
     ],
   );
@@ -268,3 +216,34 @@ Future openBrowserURLolder({required String url}) async {
     await launch(url);
   }
 }
+
+
+
+
+
+
+//     // ListTile(
+        //     //   contentPadding: const EdgeInsets.all(0.1),
+        //     //   onTap: () {
+        //     //     final url = Uri(
+        //     //         scheme: 'mailto',
+        //     //         path: 'mailto:contato@contactmais.com.br',
+        //     //         queryParameters: {
+        //     //           'subject': 'Gostaria de saber mais sobre os produtos'
+        //     //         });
+        //     //     openBrowserURL(url: url);
+        //     //   },
+        //     //   leading: FaIcon(FontAwesomeIcons.envelope,
+        //     //       size: 20, color: Colors.black),
+        //     //   title: Container(
+        //     //     width: 25.0,
+        //     //     decoration:
+        //     //         BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
+        //     //     child: Text(
+        //     //       'Mail',
+        //     //       style: GoogleFonts.roboto(
+        //     //         textStyle: const TextStyle(fontSize: 16),
+        //     //       ),
+        //     //     ),
+        //     //   ),
+        //     // ),

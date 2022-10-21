@@ -90,7 +90,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         // visible: cookieVisibleBox == true,
         child: Container(
           padding: const EdgeInsets.all(8),
-          height: 65,
+          height:  ResponsiveLayout.isMobile(context) ? 110 : 65,
           color: Colors.orange.shade800,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -117,7 +117,10 @@ class _WidgetTreeState extends State<WidgetTree> {
                         },
                       );
                     },
-                    child: const Text('Aceitar'),
+                    child: const Text(
+                      'Aceitar',
+                      // style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   const SizedBox(width: 5),
                   ElevatedButton(
@@ -132,7 +135,10 @@ class _WidgetTreeState extends State<WidgetTree> {
                         },
                       );
                     },
-                    child: const Text('Recusar'),
+                    child: const Text(
+                      'Recusar',
+                      // style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ],
               )

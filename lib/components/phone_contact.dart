@@ -24,13 +24,6 @@ class PhoneContactTap extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Text(
-                textPhone,
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(fontSize: 16),
-                ),
-              ),
-              const SizedBox(width: 10.0),
               Container(
                 alignment: Alignment.center,
                 height: 24,
@@ -41,6 +34,13 @@ class PhoneContactTap extends StatelessWidget {
                 ),
                 child: const FaIcon(FontAwesomeIcons.phone,
                     size: 15, color: Colors.orangeAccent),
+              ),
+              const SizedBox(width: 5.0),
+              Text(
+                textPhone,
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(fontSize: 16),
+                ),
               ),
             ],
           ),

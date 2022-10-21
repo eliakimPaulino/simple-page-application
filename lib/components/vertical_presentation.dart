@@ -21,6 +21,46 @@ class VerticalPresentation extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              top: 340,
+              right: 10,
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (builder) => AlertDialog(
+                      contentPadding: const EdgeInsets.all(20.0),
+                      backgroundColor: const Color.fromRGBO(28, 79, 156, 1),
+                      title: const Text(
+                        'Atendimento em Libras',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      content: const Text(
+                        'Nosso time está preparado para atendê-lo(a) em Libras!',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Fechar'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/img/logoLS.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: 400,
               width: MediaQuery.of(context).size.width,
@@ -30,16 +70,15 @@ class VerticalPresentation extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 10),
-                    Center(
-                      child: SizedBox(
-                        height: 75,
-                        width: 360,
-                        child: Image.asset('assets/img/logo_branco.png',
-                            fit: BoxFit.cover),
-                      ),
+                    // const SizedBox(height: 10),
+                    Container(
+                      // color: Colors.blue,
+                      height: 80,
+                      width: 350,
+                      child: Image.asset('assets/img/logo_branco.png',
+                          fit: BoxFit.fitWidth),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     SizedBox(
                       // width: MediaQuery.of(context).size.width / 3,
                       width: 300,
@@ -55,7 +94,9 @@ class VerticalPresentation extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    SizedBox(
+                    Container(
+                      // color: Colors.blue,
+                      height: 150,
                       width: 400,
                       child: Text(
                         'Aqui você contrata seu empréstimo de forma 100% digital, segura e rápida, com todo o suporte que você precisa.',
