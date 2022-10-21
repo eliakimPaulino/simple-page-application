@@ -37,7 +37,7 @@ class HorizontalPresentation extends StatelessWidget {
                         style: TextStyle(color: Colors.orange),
                       ),
                       content: const Text(
-                        'Nosso time está preparado para atendê-lo(a) em Libras!',
+                        'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
                         style: TextStyle(color: Colors.white),
                       ),
                       actions: [
