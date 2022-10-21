@@ -10,25 +10,24 @@ Widget body(context) {
       SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Stack(
-          alignment: AlignmentDirectional.center,
+          alignment: AlignmentDirectional.topCenter,
           children: [
             const GlobePosition(
               top: 30,
               right: -200,
             ),
             const GlobePosition(
-              top: 600,
+              top: 700,
               left: -200,
             ),
             const GlobePosition(
-              top: 1350,
+              top: 1200,
               right: -200,
             ),
-            if (MediaQuery.of(context).size.height > 1500)
-              const GlobePosition(
-                top: 1750,
-                left: -200,
-              ),
+            const GlobePosition(
+              top: 2000,
+              left: -200,
+            ),
             benefitList(),
           ],
         ),

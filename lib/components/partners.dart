@@ -63,7 +63,7 @@ class _PartnersListState extends State<PartnersList> {
   Widget buildImg(String localImg, int index) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 12),
         // width: double.infinity,
-        color: Colors.white,
+        // color: Colors.white,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5.0),
           child: Image(
