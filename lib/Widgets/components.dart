@@ -26,7 +26,7 @@ Widget body(context) {
             ),
             const GlobePosition(
               top: 2000,
-              left: -200,
+              left: -235,
             ),
             benefitList(),
           ],
