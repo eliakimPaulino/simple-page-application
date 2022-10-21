@@ -58,6 +58,13 @@ class HorizontalPresentation extends StatelessWidget {
                       image: AssetImage('assets/img/logoLS.png'),
                       fit: BoxFit.cover,
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 6.0),
+                        color: Colors.black.withOpacity(.80),
+                        blurRadius: 7,
+                      ),
+                    ],
                   ),
                 ),
               ),

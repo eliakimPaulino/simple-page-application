@@ -14,7 +14,10 @@ class PhoneContactTap extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: GestureDetector(
-        onTap: () => openBrowserURL(url: Uri.parse('tel:$path')),
+        // onTap: () => openBrowserURL(url: Uri.parse('tel:$path')),
+        onTap: MediaQuery.of(context).size.width < 600
+            ? () => openBrowserURL(url: Uri.parse('tel:$path'))
+            : () => openBrowserURL(url: Uri.parse('')),
         child: Container(
           height: 25,
           width: 150.0,

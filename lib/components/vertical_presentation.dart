@@ -57,6 +57,13 @@ class VerticalPresentation extends StatelessWidget {
                       image: AssetImage('assets/img/logoLS.png'),
                       fit: BoxFit.cover,
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 6.0),
+                        color: Colors.black.withOpacity(.80),
+                        blurRadius: 7,
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -100,7 +107,7 @@ class VerticalPresentation extends StatelessWidget {
                       width: 400,
                       child: Text(
                         'Aqui você contrata seu empréstimo de forma 100% digital, segura e rápida, com todo o suporte que você precisa.',
-                        maxLines: 3,
+                        maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.roboto(
                             textStyle: const TextStyle(

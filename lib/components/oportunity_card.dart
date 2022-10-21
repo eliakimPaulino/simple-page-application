@@ -113,19 +113,19 @@ class CardOportunity extends StatelessWidget {
                     colors: [Colors.orange, Colors.red],
                   ),
                 ),
-                child: ListTile(
-                  title: const Text(
+                child: TextButton(
+                  child: const Text(
                     'Saiba mais',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
                     ),
                   ),
-                  onTap: () => openBrowserURL(url: Uri.parse(path)),
+                  onPressed: () => openBrowserURL(url: Uri.parse(path)),
                   // onTap: () => openBrowserURL(url: path),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
-                  ),
+                  // shape: RoundedRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(40),
+                  // ),
                 ),
               ),
               const SizedBox(height: 16.0),
