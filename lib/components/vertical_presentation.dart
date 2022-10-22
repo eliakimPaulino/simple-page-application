@@ -1,9 +1,18 @@
+// ignore_for_file: must_call_super, prefer_final_fields, avoid_single_cascade_in_expression_statements
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class VerticalPresentation extends StatelessWidget {
+import 'content_video.dart';
+
+class VerticalPresentation extends StatefulWidget {
   const VerticalPresentation({Key? key}) : super(key: key);
 
+  @override
+  State<VerticalPresentation> createState() => _VerticalPresentationState();
+}
+
+class _VerticalPresentationState extends State<VerticalPresentation> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,6 +36,7 @@ class VerticalPresentation extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   showDialog(
+                    useSafeArea: false,
                     context: context,
                     builder: (builder) => AlertDialog(
                       contentPadding: const EdgeInsets.all(20.0),
@@ -35,10 +45,11 @@ class VerticalPresentation extends StatelessWidget {
                         'Atendimento em Libras',
                         style: TextStyle(color: Colors.orange),
                       ),
-                      content: const Text(
-                        'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                      content: ContentVideo(height: 198, width: 350),
+                      // const Text(
+                      //   'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
+                      //   style: TextStyle(color: Colors.white),
+                      // ),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
@@ -78,7 +89,7 @@ class VerticalPresentation extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // const SizedBox(height: 10),
-                    Container(
+                    SizedBox(
                       // color: Colors.blue,
                       height: 80,
                       width: 350,
@@ -101,7 +112,7 @@ class VerticalPresentation extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    Container(
+                    SizedBox(
                       // color: Colors.blue,
                       height: 150,
                       width: 400,
