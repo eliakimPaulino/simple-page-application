@@ -22,49 +22,48 @@ class _ContentVideoState extends State<ContentVideo> {
     _videoController
       ..initialize().then((_) {
         setState(() {});
-      });
+      })
+      // ..setLooping(true)
+      // ..initialize().then((_) => _videoController.play())
+      ;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: AspectRatio(
-        aspectRatio: _videoController.value.aspectRatio,
-        child: SizedBox(
-          height: widget.height,
-          width: widget.width,
-          child: Stack(
-            children: [
-              _videoController.value.isInitialized
-                  ? Container(
-                      decoration:
-                          BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                      child: VideoPlayer(_videoController))
-                  : Container(),
-              Positioned(
-                bottom: 10,
-                right: 10,
-                child: IconButton(
-                  splashColor: Colors.orange,
-                  splashRadius: 5,
-                  color: Colors.orange,
-                  onPressed: () {
-                    setState(() {
-                      _videoController.value.isPlaying
-                          ? _videoController.pause()
-                          : _videoController.play();
-                      widget.play = !widget.play;
-                    });
-                  },
-                  icon: _videoController.value.isPlaying
-                      ? const Icon(Icons.pause)
-                      : const Icon(Icons.play_arrow),
-                ),
+    return AspectRatio(
+      aspectRatio: _videoController.value.aspectRatio,
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+        height: widget.height,
+        width: widget.width,
+        child: Stack(
+          children: [
+            _videoController.value.isInitialized
+                ? VideoPlayer(_videoController)
+                : Container(),
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: IconButton(
+                splashColor: Colors.orange,
+                splashRadius: 5,
+                color: Colors.orange,
+                onPressed: () {
+                  setState(() {
+                    _videoController.value.isPlaying
+                        ? _videoController.pause()
+                        : _videoController.play();
+                    widget.play = !widget.play;
+                  });
+                },
+                icon: _videoController.value.isPlaying
+                    ? const Icon(Icons.pause)
+                    : const Icon(Icons.play_arrow),
               ),
-              BasicOverlayWidget(controller: _videoController),
-            ],
-          ),
+            ),
+            BasicOverlayWidget(controller: _videoController),
+          ],
         ),
       ),
     );
@@ -90,9 +89,7 @@ class BasicOverlayWidget extends StatelessWidget {
     );
   }
 
-  Widget buildIndicator() => VideoProgressIndicator(
-        controller,
-        allowScrubbing: true,
-        colors: const VideoProgressColors(playedColor: Colors.orange)
-      );
+  Widget buildIndicator() => VideoProgressIndicator(controller,
+      allowScrubbing: true,
+      colors: const VideoProgressColors(playedColor: Colors.orange));
 }
