@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cooky/cooky.dart' as cookie;
 // import 'dart:html';
 import 'package:flutter/material.dart';
@@ -20,7 +18,6 @@ class WidgetTree extends StatefulWidget {
 }
 
 class _WidgetTreeState extends State<WidgetTree> {
-  bool cookieVisibleBox = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +87,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         // visible: cookieVisibleBox == true,
         child: Container(
           padding: const EdgeInsets.all(8),
-          height:  ResponsiveLayout.isMobile(context) ? 110 : 65,
+          height: ResponsiveLayout.isMobile(context) ? 110 : 65,
           color: Colors.orange.shade800,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

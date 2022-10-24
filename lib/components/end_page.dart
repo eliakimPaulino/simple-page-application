@@ -113,51 +113,51 @@ Widget containerContato(context) {
   );
 }
 
-Widget containerRedesSociais(context) {
-  return Container(
-    // color: Colors.blue,
-    height: 30.0,
-    width: 770,
-    // width: MediaQuery.of(context).size.width,
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
-        MediaContactTap(
-          path: 'https://www.facebook.com/GiuliaMRosa',
-          title: 'Facebook',
-          icon: FaIcon(FontAwesomeIcons.facebookF,
-              size: 15, color: Colors.orangeAccent),
-        ),
-        MediaContactTap(
-          path: 'https://www.instagram.com/contactmais/',
-          title: 'Instagram',
-          icon: FaIcon(FontAwesomeIcons.instagram,
-              size: 15, color: Colors.orangeAccent),
-        ),
-        MediaContactTap(
-          path: 'https://wa.link/3oyyu7',
-          title: 'Whatsapp',
-          icon: FaIcon(FontAwesomeIcons.whatsapp,
-              size: 15, color: Colors.orangeAccent),
-        ),
-        MediaContactTap(
-          path:
-              'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
-          title: 'Localização',
-          icon: FaIcon(FontAwesomeIcons.locationDot,
-              size: 15, color: Colors.orangeAccent),
-        ),
-        MediaContactTap(
-          path: 'mailto:contato@contactmais.com.br',
-          title: 'E-Mail',
-          icon: FaIcon(FontAwesomeIcons.envelope,
-              size: 15, color: Colors.orangeAccent),
-        ),
-      ],
-    ),
-  );
-}
+// Widget containerRedesSociais(context) {
+//   return Container(
+//     // color: Colors.blue,
+//     height: 30.0,
+//     width: 770,
+//     // width: MediaQuery.of(context).size.width,
+//     child: Row(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//       children: const [
+//         MediaContactTap(
+//           path: 'https://www.facebook.com/GiuliaMRosa',
+//           title: 'Facebook',
+//           icon: FaIcon(FontAwesomeIcons.facebookF,
+//               size: 15, color: Colors.orangeAccent),
+//         ),
+//         MediaContactTap(
+//           path: 'https://www.instagram.com/contactmais/',
+//           title: 'Instagram',
+//           icon: FaIcon(FontAwesomeIcons.instagram,
+//               size: 15, color: Colors.orangeAccent),
+//         ),
+//         MediaContactTap(
+//           path: 'https://wa.link/3oyyu7',
+//           title: 'Whatsapp',
+//           icon: FaIcon(FontAwesomeIcons.whatsapp,
+//               size: 15, color: Colors.orangeAccent),
+//         ),
+//         MediaContactTap(
+//           path:
+//               'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
+//           title: 'Localização',
+//           icon: FaIcon(FontAwesomeIcons.locationDot,
+//               size: 15, color: Colors.orangeAccent),
+//         ),
+//         MediaContactTap(
+//           path: 'mailto:contato@contactmais.com.br',
+//           title: 'E-Mail',
+//           icon: FaIcon(FontAwesomeIcons.envelope,
+//               size: 15, color: Colors.orangeAccent),
+//         ),
+//       ],
+//     ),
+//   );
+// }
 
 Widget wrapedSocialMedia(context) {
   return Wrap(

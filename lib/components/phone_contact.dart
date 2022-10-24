@@ -42,7 +42,7 @@ class PhoneContactTap extends StatelessWidget {
               Text(
                 textPhone,
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(fontSize: 16),
+                  textStyle: TextStyle(fontSize:  MediaQuery.of(context).size.width < 650 ? 12 : 16),
                 ),
               ),
             ],

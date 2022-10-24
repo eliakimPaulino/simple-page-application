@@ -42,7 +42,7 @@ class MediaContactTap extends StatelessWidget {
               title,
               // textAlign: TextAlign.center,
               style: GoogleFonts.roboto(
-                textStyle: const TextStyle(fontSize: 16),
+                textStyle: TextStyle(fontSize: MediaQuery.of(context).size.width < 650 ? 12 : 16),
               ),
             ),
           ],
