@@ -20,12 +20,15 @@ class _ContentVideoState extends State<ContentVideo> {
   @override
   void initState() {
     _videoController
-      ..initialize().then((_) {
-        setState(() {});
-      })
-      // ..setLooping(true)
-      // ..initialize().then((_) => _videoController.play())
-      ;
+          ..initialize().then((_) {
+            setState(() {});
+          })
+        // ..setLooping(true)
+        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
+        // ..initialize().then((_) => _videoController.play())
+        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1))) 
+        // ..initialize().then((_) => _videoController.dispose())
+        ;
     super.initState();
   }
 

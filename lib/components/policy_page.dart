@@ -33,7 +33,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''A CONTACT MAIS® está de acordo com a Lei Geral de Proteção de Dados nº 13.709/2018. Em tudo que fazemos, buscamos proteger seus dados e informações. Assim, nossa Política de Privacidade funciona da seguinte forma:''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -50,7 +50,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''Coletamos as informações que você compartilha, mediante consentimento, ao solicitar informações/cotações de nossos produtos e serviços, através do preenchimento dos formulários que disponibilizamos em nosso site.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -72,7 +72,7 @@ class PolicyPage extends StatelessWidget {
 •  entrar em contato para realizar atendimento;
 •  esclarecer suas dúvidas sobre nossos produtos;
 •  calcular e enviar as cotações solicitadas.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -89,7 +89,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''Seus dados são compartilhados com terceiros, estritamente com sei consentimento, sendo elas única e exclusivamente as financeiras das quais somos correspondentes bancários.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -106,7 +106,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''Adotamos práticas e tecnologias alinhadas aos padrões técnicos e regulatórios de mercado, bem como controles que são sempre revisados e aprimorados. Seus dados pessoais são armazenados em local seguro, por meio da tecnologia cloud.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -129,7 +129,7 @@ class PolicyPage extends StatelessWidget {
 •  solicitar a eliminação dos seus dados de nossa base de dados, desde que não exista algum impedimento legal ou regulatório que nos obrigue a mantê-los;
 •  solicitar o não recebimento de e-mails marketing, enviados automaticamente pelo nosso site;
 •  solicitar o seu cadastro para receber e-mails contendo oferta de produtos/serviços ou campanhas promocionais.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -146,7 +146,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''A Contact Mais e nossos parceiros usam cookies e tecnologias semelhantes para fornecer, manter e melhorar nossos serviços. Ao concordar, usaremos esses dados para personalização de anúncios e análises associadas.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
@@ -163,7 +163,7 @@ class PolicyPage extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''Caso precise de qualquer suporte ou tenha alguma dúvida, pedido ou sugestão em relação a essa Política, por favor entre em contato através de algum dos canais de atendimento divulgados em nosso site.''',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style:
                             TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
                       ),
