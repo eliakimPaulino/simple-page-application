@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/content_video.dart';
 import '../components/end_page.dart';
 import '../components/globe_position.dart';
 import '../components/oportunity_card.dart';
@@ -47,10 +48,11 @@ Widget benefitList() {
       runAlignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
       alignment: WrapAlignment.center,
-      children: const [
+      children: [
         SizedBox(
           child: CardOportunity(
             // video: 'libras_energia.mp4',
+            content: ContentVideoLuz(height: 350, width: 350),
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLScgF5rdiFS5-jxD-fGYummiH74CGtwf9uwYiAQE6j4T_1jo1Q/viewform',
             img: 'assets/img/capa_energia.png',
@@ -64,6 +66,7 @@ Widget benefitList() {
         SizedBox(
           child: CardOportunity(
             // video: 'libras_consignado.mp4',
+            content: ContentVideoConsignado(height: 350, width: 350),
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSfcFzOhFfb-goAR8CX6Hq1iQvEYBR7nFHNyBwDeNINwwIlFMA/viewform',
             img: 'assets/img/capa_aposentados_pensionista.png',
@@ -77,6 +80,7 @@ Widget benefitList() {
         SizedBox(
           child: CardOportunity(
             // video: 'libras_boleto',
+            content: ContentVideoBoleto(height: 350, width: 350),
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSd1XGkS1tY2RtK1OKm9S5YXX3bntjSfLNmNcVM9cXhqEnUZfg/viewform',
             img: 'assets/img/capa_boleto.png',
@@ -90,6 +94,7 @@ Widget benefitList() {
         SizedBox(
           child: CardOportunity(
             // video: 'libras_inss',
+            content: ContentVideoInss(height: 350, width: 350),
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSfsa4ELeXKTfgjyUPhfbEpc34RtsIwOOYAIW3GYherPpqVAZw/viewform',
             img: 'assets/img/capa_credit_card.png',
@@ -100,7 +105,7 @@ Widget benefitList() {
                 '• Para negativados!\n• Sem necessidade de comprovar renda!\n• 100% digital, seguro e rápido!\n',
           ),
         ),
-        PartnersList(),
+        const PartnersList(),
       ],
     ),
   );

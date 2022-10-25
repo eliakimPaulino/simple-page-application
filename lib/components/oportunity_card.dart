@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
-import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,7 +12,7 @@ class CardOportunity extends StatelessWidget {
     this.icon,
     this.describer,
     required this.path,
-    // required this.video,
+    required this.content,
   }) : super(key: key);
 
   final title;
@@ -22,7 +21,7 @@ class CardOportunity extends StatelessWidget {
   final IconData? icon;
   final describer;
   final String path;
-  // final String video;
+  final Widget content;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +68,8 @@ class CardOportunity extends StatelessWidget {
                           'Atendimento em Libras',
                           style: TextStyle(color: Colors.orange),
                         ),
-                        content:
-                            ContentVideoApresentacao(height: 198, width: 350),
+                        content: content,
+                            // ContentVideoApresentacao(height: 198, width: 350),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(context),
@@ -186,7 +185,6 @@ class CardOportunity extends StatelessWidget {
           ),
           // const SizedBox(height: 10),
         ],
-    
       ),
     );
   }

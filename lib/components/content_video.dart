@@ -21,18 +21,13 @@ class ContentVideoApresentacao extends StatefulWidget {
 class _ContentVideoApresentacaoState extends State<ContentVideoApresentacao> {
   VideoPlayerController _videoController =
       VideoPlayerController.asset('assets/video/libras_apresentacao.mp4');
+      // VideoPlayerController.asset('assets/video/libras_apresentacao.mp4');
   @override
   void initState() {
     _videoController
-          ..initialize().then((_) {
-            setState(() {});
-          })
-        // ..setLooping(true)
-        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
-        // ..initialize().then((_) => _videoController.play())
-        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1)))
-        // ..initialize().then((_) => _videoController.dispose())
-        ;
+      ..initialize().then((_) {
+        setState(() {});
+      });
     super.initState();
   }
 
@@ -77,8 +72,6 @@ class _ContentVideoApresentacaoState extends State<ContentVideoApresentacao> {
   }
 }
 
-
-
 class ContentVideoConsignado extends StatefulWidget {
   ContentVideoConsignado({
     Key? key,
@@ -90,8 +83,7 @@ class ContentVideoConsignado extends StatefulWidget {
   final double width;
 
   @override
-  State<ContentVideoConsignado> createState() =>
-      _ContentVideoConsignadoState();
+  State<ContentVideoConsignado> createState() => _ContentVideoConsignadoState();
 }
 
 class _ContentVideoConsignadoState extends State<ContentVideoConsignado> {
@@ -100,15 +92,9 @@ class _ContentVideoConsignadoState extends State<ContentVideoConsignado> {
   @override
   void initState() {
     _videoController
-          ..initialize().then((_) {
-            setState(() {});
-          })
-        // ..setLooping(true)
-        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
-        // ..initialize().then((_) => _videoController.play())
-        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1)))
-        // ..initialize().then((_) => _videoController.dispose())
-        ;
+      ..initialize().then((_) {
+        setState(() {});
+      });
     super.initState();
   }
 
@@ -164,8 +150,7 @@ class ContentVideoInss extends StatefulWidget {
   final double width;
 
   @override
-  State<ContentVideoInss> createState() =>
-      _ContentVideoInssState();
+  State<ContentVideoInss> createState() => _ContentVideoInssState();
 }
 
 class _ContentVideoInssState extends State<ContentVideoInss> {
@@ -174,15 +159,9 @@ class _ContentVideoInssState extends State<ContentVideoInss> {
   @override
   void initState() {
     _videoController
-          ..initialize().then((_) {
-            setState(() {});
-          })
-        // ..setLooping(true)
-        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
-        // ..initialize().then((_) => _videoController.play())
-        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1)))
-        // ..initialize().then((_) => _videoController.dispose())
-        ;
+      ..initialize().then((_) {
+        setState(() {});
+      });
     super.initState();
   }
 
@@ -238,8 +217,7 @@ class ContentVideoLuz extends StatefulWidget {
   final double width;
 
   @override
-  State<ContentVideoLuz> createState() =>
-      _ContentVideoLuzState();
+  State<ContentVideoLuz> createState() => _ContentVideoLuzState();
 }
 
 class _ContentVideoLuzState extends State<ContentVideoLuz> {
@@ -248,15 +226,9 @@ class _ContentVideoLuzState extends State<ContentVideoLuz> {
   @override
   void initState() {
     _videoController
-          ..initialize().then((_) {
-            setState(() {});
-          })
-        // ..setLooping(true)
-        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
-        // ..initialize().then((_) => _videoController.play())
-        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1)))
-        // ..initialize().then((_) => _videoController.dispose())
-        ;
+      ..initialize().then((_) {
+        setState(() {});
+      });
     super.initState();
   }
 
@@ -312,8 +284,7 @@ class ContentVideoBoleto extends StatefulWidget {
   final double width;
 
   @override
-  State<ContentVideoBoleto> createState() =>
-      _ContentVideoBoletoState();
+  State<ContentVideoBoleto> createState() => _ContentVideoBoletoState();
 }
 
 class _ContentVideoBoletoState extends State<ContentVideoBoleto> {
@@ -322,15 +293,9 @@ class _ContentVideoBoletoState extends State<ContentVideoBoleto> {
   @override
   void initState() {
     _videoController
-          ..initialize().then((_) {
-            setState(() {});
-          })
-        // ..setLooping(true)
-        // ..initialize().then((_) => _videoController.play()).then((_) => _videoController.dispose())
-        // ..initialize().then((_) => _videoController.play())
-        // ..initialize().then((_) => Future.delayed(const Duration(seconds: 1)))
-        // ..initialize().then((_) => _videoController.dispose())
-        ;
+      ..initialize().then((_) {
+        setState(() {});
+      });
     super.initState();
   }
 
@@ -398,4 +363,3 @@ class BasicOverlayWidget extends StatelessWidget {
       allowScrubbing: true,
       colors: const VideoProgressColors(playedColor: Colors.orange));
 }
-

@@ -58,7 +58,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (ResponsiveLayout.isMobile(context))
-              VerticalPresentation()
+              const VerticalPresentation()
             else
               const HorizontalPresentation(),
             Center(
