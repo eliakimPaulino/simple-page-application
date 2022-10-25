@@ -1,12 +1,11 @@
 // ignore_for_file: avoid_single_cascade_in_expression_statements, prefer_final_fields, must_be_immutable
 
+import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'content_video.dart';
-
 class HorizontalPresentation extends StatefulWidget {
-  const HorizontalPresentation({Key? key}) : super(key: key);
+  const HorizontalPresentation({Key? key})
+      : super(key: key);
 
   @override
   State<HorizontalPresentation> createState() => _HorizontalPresentationState();
@@ -32,8 +31,8 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
               ),
             ),
             Positioned(
-              top: 310,
-              right: 10,
+              bottom: 20,
+              right: 20,
               child: GestureDetector(
                 onTap: () {
                   showDialog(
@@ -45,11 +44,7 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
                         'Atendimento em Libras',
                         style: TextStyle(color: Colors.orange),
                       ),
-                      content: ContentVideo(height: 350, width: 620),
-                      // const Text(
-                      //   'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
-                      //   style: TextStyle(color: Colors.white),
-                      // ),
+                      content: ContentVideoApresentacao(height: 350, width: 620),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
@@ -63,7 +58,7 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
                   height: 80,
                   width: 80,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
                       image: AssetImage('assets/img/logoLS.png'),
                       fit: BoxFit.cover,

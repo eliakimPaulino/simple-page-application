@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,6 +13,7 @@ class CardOportunity extends StatelessWidget {
     this.icon,
     this.describer,
     required this.path,
+    // required this.video,
   }) : super(key: key);
 
   final title;
@@ -20,6 +22,7 @@ class CardOportunity extends StatelessWidget {
   final IconData? icon;
   final describer;
   final String path;
+  // final String video;
 
   @override
   Widget build(BuildContext context) {
@@ -38,16 +41,66 @@ class CardOportunity extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: 180,
-            width: 340,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: DecorationImage(
-                image: AssetImage(img),
-                fit: BoxFit.cover,
+          Stack(
+            children: [
+              Container(
+                height: 180,
+                width: 340,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(img),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
+              Positioned(
+                bottom: 10,
+                right: 10,
+                child: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                      useSafeArea: false,
+                      context: context,
+                      builder: (builder) => AlertDialog(
+                        contentPadding: const EdgeInsets.all(20.0),
+                        backgroundColor: const Color.fromRGBO(28, 79, 156, 1),
+                        title: const Text(
+                          'Atendimento em Libras',
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        content:
+                            ContentVideoApresentacao(height: 198, width: 350),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text('Fechar'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6.25),
+                      image: const DecorationImage(
+                        image: AssetImage('assets/img/logoLS.png'),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: const Offset(0.0, 6.0),
+                          color: Colors.black.withOpacity(.80),
+                          blurRadius: 7,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -133,6 +186,7 @@ class CardOportunity extends StatelessWidget {
           ),
           // const SizedBox(height: 10),
         ],
+    
       ),
     );
   }

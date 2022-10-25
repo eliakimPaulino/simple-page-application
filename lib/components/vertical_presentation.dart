@@ -1,9 +1,10 @@
 // ignore_for_file: must_call_super, prefer_final_fields, avoid_single_cascade_in_expression_statements
 
+import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'content_video.dart';
+// import 'content_video.dart';
 
 class VerticalPresentation extends StatefulWidget {
   const VerticalPresentation({Key? key}) : super(key: key);
@@ -45,7 +46,8 @@ class _VerticalPresentationState extends State<VerticalPresentation> {
                         'Atendimento em Libras',
                         style: TextStyle(color: Colors.orange),
                       ),
-                      content: ContentVideo(height: 198, width: 350),
+                      content:
+                          ContentVideoApresentacao(height: 198, width: 350),
                       // const Text(
                       //   'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
                       //   style: TextStyle(color: Colors.white),

@@ -50,6 +50,7 @@ Widget benefitList() {
       children: const [
         SizedBox(
           child: CardOportunity(
+            // video: 'libras_energia.mp4',
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLScgF5rdiFS5-jxD-fGYummiH74CGtwf9uwYiAQE6j4T_1jo1Q/viewform',
             img: 'assets/img/capa_energia.png',
@@ -62,6 +63,7 @@ Widget benefitList() {
         ),
         SizedBox(
           child: CardOportunity(
+            // video: 'libras_consignado.mp4',
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSfcFzOhFfb-goAR8CX6Hq1iQvEYBR7nFHNyBwDeNINwwIlFMA/viewform',
             img: 'assets/img/capa_aposentados_pensionista.png',
@@ -74,6 +76,7 @@ Widget benefitList() {
         ),
         SizedBox(
           child: CardOportunity(
+            // video: 'libras_boleto',
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSd1XGkS1tY2RtK1OKm9S5YXX3bntjSfLNmNcVM9cXhqEnUZfg/viewform',
             img: 'assets/img/capa_boleto.png',
@@ -86,6 +89,7 @@ Widget benefitList() {
         ),
         SizedBox(
           child: CardOportunity(
+            // video: 'libras_inss',
             path:
                 'https://docs.google.com/forms/d/e/1FAIpQLSfsa4ELeXKTfgjyUPhfbEpc34RtsIwOOYAIW3GYherPpqVAZw/viewform',
             img: 'assets/img/capa_credit_card.png',

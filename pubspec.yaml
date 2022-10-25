@@ -67,7 +67,11 @@ flutter:
   assets:
     - assets/img/
     - assets/partners/
-    - assets/video/
+    - assets/video/libras_apresentacao.mp4
+    - assets/video/libras_boleto.mp4
+    - assets/video/libras_consignado.mp4
+    - assets/video/libras_inss.mp4
+    - assets/video/libras_luz.mp4
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
