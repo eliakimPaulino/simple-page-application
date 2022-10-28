@@ -3,15 +3,30 @@
 import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class HorizontalPresentation extends StatefulWidget {
-  const HorizontalPresentation({Key? key})
-      : super(key: key);
+  const HorizontalPresentation({Key? key}) : super(key: key);
 
   @override
   State<HorizontalPresentation> createState() => _HorizontalPresentationState();
 }
 
 class _HorizontalPresentationState extends State<HorizontalPresentation> {
+  var servicos = const Text(
+    '''Nosso time está preparado para entender a sua necessidade e atendê-lo(a) com os seguintes serviços:\n 
+- Empréstimo com débito na conta de luz: Crédito Pessoal com Débito na Conta de Luz, e Limites Personalizados!
+- Empréstimo Consignado INSS: Empréstimo facilitado para você que é Aposentado e Pensionista, BPC/LOAS.
+- Crédito Pessoal no boleto: Crédito Pessoal no Boleto, com Limites Personalizados! Ideal para quem tem Carteira Assinada!
+- Cartão Benefício INSS: O Cartão Benefício é um Cartão de Crédito consignado, sem Anuidade e com desconto de parte do saldo da fautura na folha de pagamento!''',
+    textAlign: TextAlign.start,
+    style: TextStyle(color: Colors.white),
+  );
+
+  var sobre = const Text(
+    '''A Contact Mais® não é uma Instituição Financeira. Atuamos como Correspondente Bancário prestando Serviços de Intermediação e Atendimento aos Clientes de nossos Parceiros. A atividade de Correspondente Bancário é regulada pelo Banco Central do Brasil nos termos da Resolução nº 3.954, de fevereiro de 2011.\n\nSeguimos em constante atualizações e contamos com uma Completa Infraestrutura para Atender de forma Diferenciada nossos Clientes, nos destacando pela Excelência nos Serviços Prestados com Agilidade e Eficiência.''',
+    style: TextStyle(color: Colors.white),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,15 +35,98 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
         Stack(
           children: [
             Container(
-              height: 400,
+              height: 450,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(25),
+                  bottomRight: Radius.circular(25),
+                ),
                 image: DecorationImage(
                   alignment: Alignment.centerRight,
                   image: AssetImage('assets/img/desktop_baner.png'),
                   fit: BoxFit.cover,
                 ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (builder) => AlertDialog(
+                                contentPadding: const EdgeInsets.all(20.0),
+                                backgroundColor: Colors.deepOrange,
+                                scrollable: true,
+                                title: const Text(
+                                  'Serviços',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                content: servicos,
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context),
+                                    child: const Text(
+                                      'Fechar',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          child: const Text('Serviços',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18)),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (builder) => AlertDialog(
+                                contentPadding: const EdgeInsets.all(20.0),
+                                backgroundColor: Colors.deepOrange,
+                                scrollable: true,
+                                title: const Text(
+                                  'Sobre',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                content: sobre,
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context),
+                                    child: const Text(
+                                      'Fechar',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          child: const Text('Sobre',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18)),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        const text = 'Funcionalidades em construção';
+                        const snackBar = SnackBar(
+                          content: Text(text),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      },
+                      icon: const Icon(Icons.person),
+                    ),
+                  ]),
             ),
             Positioned(
               bottom: 20,
@@ -44,7 +142,8 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
                         'Atendimento em Libras',
                         style: TextStyle(color: Colors.orange),
                       ),
-                      content: ContentVideoApresentacao(height: 350, width: 620),
+                      content:
+                          ContentVideoApresentacao(height: 350, width: 620),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
@@ -75,6 +174,7 @@ class _HorizontalPresentationState extends State<HorizontalPresentation> {
               ),
             ),
             Positioned(
+              bottom: -150,
               left: MediaQuery.of(context).size.width / 18,
               child: SizedBox(
                 height: MediaQuery.of(context).size.height / 1.2,

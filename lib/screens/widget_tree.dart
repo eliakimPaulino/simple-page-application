@@ -22,37 +22,39 @@ class _WidgetTreeState extends State<WidgetTree> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const DrawerPage(),
-      appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 60),
-        child: (ResponsiveLayout.isDesktop(context) ||
-                ResponsiveLayout.isTablet(context))
-            ? const Header()
-            : AppBar(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black,
-                elevation: 0,
-                actions: [
-                  IconButton(
-                    icon: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: const Center(
-                        child: FaIcon(FontAwesomeIcons.whatsapp,
-                            color: Colors.white, size: 20),
-                      ),
-                    ),
-                    onPressed: () async {
-                      const String url = 'https://wa.link/3oyyu7';
-                      openBrowserURL(url: url);
-                    },
-                  ),
-                ],
-              ),
-      ),
+      // appBar: const  PreferredSize(
+      //   preferredSize: Size(double.infinity, 60),
+      //   child:
+      // (ResponsiveLayout.isDesktop(context) ||
+      //         ResponsiveLayout.isTablet(context))
+      // Header(),
+      // : Container(),
+      //  AppBar(
+      //     backgroundColor: Color.fromRGBO(233, 74, 27, 1),
+      //     foregroundColor: Colors.black,
+      //     elevation: 0,
+      //     actions: [
+      //       IconButton(
+      //         icon: Container(
+      //           height: 30,
+      //           width: 30,
+      //           decoration: BoxDecoration(
+      //             color: Colors.green,
+      //             borderRadius: BorderRadius.circular(30),
+      //           ),
+      //           child: const Center(
+      //             child: FaIcon(FontAwesomeIcons.whatsapp,
+      //                 color: Colors.white, size: 20),
+      //           ),
+      //         ),
+      //         onPressed: () async {
+      //           const String url = 'https://wa.link/3oyyu7';
+      //           openBrowserURL(url: url);
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -81,6 +83,15 @@ class _WidgetTreeState extends State<WidgetTree> {
             body(context),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+        onPressed: () async {
+          const String url = 'https://wa.link/3oyyu7';
+          openBrowserURL(url: url);
+        },
+        child: const Icon(Icons.whatsapp_rounded, size: 40),
       ),
       bottomNavigationBar: Visibility(
         visible: cookie.get('Kz_09Mn') == null,

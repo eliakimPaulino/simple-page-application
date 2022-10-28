@@ -95,113 +95,73 @@ class EndPage extends StatelessWidget {
 }
 
 Widget containerContato(context) {
-  return Container(
-    // color: Colors.blue,
-    height: 30.0,
-    width: 770.0,
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        PhoneContactTap(path: '08008801851', textPhone: '0800 880 1851'),
-        SizedBox(height: 15),
-        PhoneContactTap(path: '1236214715', textPhone: '(12) 3621-4715'),
-        SizedBox(height: 15),
-        PhoneContactTap(path: '1234222222', textPhone: '(12) 3422-2222'),
-      ],
+  return SizedBox(
+    height: 35.0,
+    width: MediaQuery.of(context).size.width,
+    // width: 415.0,
+    child: Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          PhoneContactTap(path: '08008801851', textPhone: '0800 880 1851'),
+          SizedBox(width: 15),
+          PhoneContactTap(path: '1236214715', textPhone: '(12) 3621-4715'),
+          SizedBox(width: 15),
+          PhoneContactTap(path: '1234222222', textPhone: '(12) 3422-2222'),
+        ],
+      ),
     ),
   );
 }
 
-// Widget containerRedesSociais(context) {
-//   return Container(
-//     // color: Colors.blue,
-//     height: 30.0,
-//     width: 770,
-//     // width: MediaQuery.of(context).size.width,
-//     child: Row(
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//       children: const [
-//         MediaContactTap(
-//           path: 'https://www.facebook.com/GiuliaMRosa',
-//           title: 'Facebook',
-//           icon: FaIcon(FontAwesomeIcons.facebookF,
-//               size: 15, color: Colors.orangeAccent),
-//         ),
-//         MediaContactTap(
-//           path: 'https://www.instagram.com/contactmais/',
-//           title: 'Instagram',
-//           icon: FaIcon(FontAwesomeIcons.instagram,
-//               size: 15, color: Colors.orangeAccent),
-//         ),
-//         MediaContactTap(
-//           path: 'https://wa.link/3oyyu7',
-//           title: 'Whatsapp',
-//           icon: FaIcon(FontAwesomeIcons.whatsapp,
-//               size: 15, color: Colors.orangeAccent),
-//         ),
-//         MediaContactTap(
-//           path:
-//               'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
-//           title: 'Localização',
-//           icon: FaIcon(FontAwesomeIcons.locationDot,
-//               size: 15, color: Colors.orangeAccent),
-//         ),
-//         MediaContactTap(
-//           path: 'mailto:contato@contactmais.com.br',
-//           title: 'E-Mail',
-//           icon: FaIcon(FontAwesomeIcons.envelope,
-//               size: 15, color: Colors.orangeAccent),
-//         ),
-//       ],
-//     ),
-//   );
-// }
-
 Widget wrapedSocialMedia(context) {
-  return Wrap(
-    direction: Axis.horizontal,
-    clipBehavior: Clip.hardEdge,
-    spacing: 20,
-    //Vertical spacing when the widget shift to next line
-    runSpacing: 20,
-    runAlignment: WrapAlignment.center,
-    crossAxisAlignment: WrapCrossAlignment.center,
-    alignment: WrapAlignment.center,
-    children: const [
-      MediaContactTap(
-        path: 'https://www.facebook.com/GiuliaMRosa',
-        title: 'Facebook',
-        icon: FaIcon(FontAwesomeIcons.facebookF,
-            size: 15, color: Colors.orangeAccent),
-      ),
-      MediaContactTap(
-        path: 'https://www.instagram.com/contactmais/',
-        title: 'Instagram',
-        icon: FaIcon(FontAwesomeIcons.instagram,
-            size: 15, color: Colors.orangeAccent),
-      ),
-      MediaContactTap(
-        path: 'https://wa.link/3oyyu7',
-        title: 'Whatsapp',
-        icon: FaIcon(FontAwesomeIcons.whatsapp,
-            size: 15, color: Colors.orangeAccent),
-      ),
-      MediaContactTap(
-        path:
-            'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
-        title: 'Localização',
-        icon: FaIcon(FontAwesomeIcons.locationDot,
-            size: 15, color: Colors.orangeAccent),
-      ),
-      MediaContactTap(
-        path: 'mailto:contato@contactmais.com.br',
-        title: 'E-Mail',
-        icon: FaIcon(FontAwesomeIcons.envelope,
-            size: 15, color: Colors.orangeAccent),
-      ),
-    ],
+  return Padding(
+    padding: const EdgeInsets.all(4.0),
+    child: Wrap(
+      direction: Axis.horizontal,
+      clipBehavior: Clip.hardEdge,
+      spacing: 20,
+      //Vertical spacing when the widget shift to next line
+      runSpacing: 20,
+      runAlignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      alignment: WrapAlignment.center,
+      children: const [
+        MediaContactTap(
+          path: 'https://www.facebook.com/GiuliaMRosa',
+          title: 'Facebook',
+          icon: FaIcon(FontAwesomeIcons.facebookF,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path: 'https://www.instagram.com/contactmais/',
+          title: 'Instagram',
+          icon: FaIcon(FontAwesomeIcons.instagram,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path: 'https://wa.link/3oyyu7',
+          title: 'Whatsapp',
+          icon: FaIcon(FontAwesomeIcons.whatsapp,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path:
+              'https://www.google.com.br/maps/place/CONTACT+PLUS+CORRETORA+DE+SEGUROS/@-23.015936,-45.5670512,15z/data=!4m5!3m4!1s0x0:0x1e0c71ee6abf8b05!8m2!3d-23.015936!4d-45.56705127',
+          title: 'Localização',
+          icon: FaIcon(FontAwesomeIcons.locationDot,
+              size: 15, color: Colors.orangeAccent),
+        ),
+        MediaContactTap(
+          path: 'mailto:contato@contactmais.com.br',
+          title: 'E-Mail',
+          icon: FaIcon(FontAwesomeIcons.envelope,
+              size: 15, color: Colors.orangeAccent),
+        ),
+      ],
+    ),
   );
 }
 

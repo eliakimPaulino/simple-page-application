@@ -2,7 +2,9 @@
 
 import 'package:contactmais_page/components/content_video.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // import 'content_video.dart';
 
@@ -22,70 +24,46 @@ class _VerticalPresentationState extends State<VerticalPresentation> {
         Stack(
           children: [
             Container(
-              height: 400,
+              height: 450,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
                 image: DecorationImage(
                   image: AssetImage('assets/img/mobile_site.png'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Positioned(
-              top: 340,
-              right: 10,
-              child: GestureDetector(
-                onTap: () {
-                  showDialog(
-                    useSafeArea: false,
-                    context: context,
-                    builder: (builder) => AlertDialog(
-                      contentPadding: const EdgeInsets.all(20.0),
-                      backgroundColor: const Color.fromRGBO(28, 79, 156, 1),
-                      title: const Text(
-                        'Atendimento em Libras',
-                        style: TextStyle(color: Colors.orange),
-                      ),
-                      content:
-                          ContentVideoApresentacao(height: 198, width: 350),
-                      // const Text(
-                      //   'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
-                      //   style: TextStyle(color: Colors.white),
-                      // ),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('Fechar'),
-                        ),
-                      ],
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      icon: const Icon(Icons.menu_rounded),
                     ),
-                  );
-                },
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/img/logoLS.png'),
-                      fit: BoxFit.cover,
+                    IconButton(
+                      onPressed: () {
+                        const text = 'Funcionalidades em construção';
+                        const snackBar = SnackBar(
+                          content: Text(text),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      },
+                      icon: const Icon(Icons.person),
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: const Offset(0.0, 6.0),
-                        color: Colors.black.withOpacity(.80),
-                        blurRadius: 7,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                  ]),
             ),
             SizedBox(
-              height: 400,
+              height: 450,
               width: MediaQuery.of(context).size.width,
               child: Padding(
-                padding: const EdgeInsets.only(left: 16.0),
+                padding: const EdgeInsets.only(left: 16.0, top: 16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,10 +111,66 @@ class _VerticalPresentationState extends State<VerticalPresentation> {
                 ),
               ),
             ),
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    useSafeArea: false,
+                    context: context,
+                    builder: (builder) => AlertDialog(
+                      contentPadding: const EdgeInsets.all(20.0),
+                      backgroundColor: const Color.fromRGBO(28, 79, 156, 1),
+                      title: const Text(
+                        'Atendimento em Libras',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      content:
+                          ContentVideoApresentacao(height: 198, width: 350),
+                      // const Text(
+                      //   'Contamos com uma equipe de profissionais habilitados para atender deficientes auditivos!',
+                      //   style: TextStyle(color: Colors.white),
+                      // ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Fechar'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/img/logoLS.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0.0, 6.0),
+                        color: Colors.black.withOpacity(.80),
+                        blurRadius: 7,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 16),
       ],
     );
+  }
+
+  Future openBrowserURL({required String url}) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
   }
 }

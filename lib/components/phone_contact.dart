@@ -19,8 +19,8 @@ class PhoneContactTap extends StatelessWidget {
             ? () => openBrowserURL(url: Uri.parse('tel:$path'))
             : () => openBrowserURL(url: Uri.parse('')),
         child: Container(
-          height: 25,
-          width: 150.0,
+          height: 40,
+          width: MediaQuery.of(context).size.width < 650 ? 110 : 160,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             // color: Colors.blue,
@@ -38,7 +38,7 @@ class PhoneContactTap extends StatelessWidget {
                 child: const FaIcon(FontAwesomeIcons.phone,
                     size: 15, color: Colors.orangeAccent),
               ),
-              const SizedBox(width: 5.0),
+              const SizedBox(width: 2.0),
               Text(
                 textPhone,
                 style: GoogleFonts.roboto(

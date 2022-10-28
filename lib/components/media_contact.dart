@@ -18,10 +18,9 @@ class MediaContactTap extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         height: 25,
-        width: 120,
+        width: MediaQuery.of(context).size.width < 650 ? 110 : 140,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          // color: Colors.blue,
         ),
         child: Row(
           children: [
@@ -34,8 +33,6 @@ class MediaContactTap extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: icon,
-              // const FaIcon(FontAwesomeIcons.phone,
-              //     size: 15, color: Colors.orangeAccent),
             ),
             const SizedBox(width: 5.0),
             Text(
