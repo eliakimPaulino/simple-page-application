@@ -38,22 +38,22 @@ class _PartnersListState extends State<PartnersList> {
           ),
         ),
         const SizedBox(height: 10.0),
-        const SizedBox(height: 10.0),
         ScrollConfiguration(
           behavior: MyCustomScrollBehavior(),
           child: SizedBox(
             height: 85.0,
             child: CarouselSlider.builder(
-                options: CarouselOptions(
-                  height: 90,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 2),
-                ),
-                itemCount: localImages.length,
-                itemBuilder: (context, index, realIndex) {
-                  final localImg = localImages[index];
-                  return buildImg(localImg, index);
-                }),
+              options: CarouselOptions(
+                height: 90,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 2),
+              ),
+              itemCount: localImages.length,
+              itemBuilder: (context, index, realIndex) {
+                final localImg = localImages[index];
+                return buildImg(localImg, index);
+              },
+            ),
           ),
         ),
       ],

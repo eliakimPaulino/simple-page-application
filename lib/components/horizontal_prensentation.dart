@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_single_cascade_in_expression_statements, prefer_final_fields, must_be_immutable
 
-import 'package:contactmais_page/components/content_video.dart';
+import 'package:contactmais/components/content_video.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

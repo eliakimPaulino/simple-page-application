@@ -1,8 +1,7 @@
 // ignore_for_file: must_call_super, prefer_final_fields, avoid_single_cascade_in_expression_statements
 
-import 'package:contactmais_page/components/content_video.dart';
+import 'package:contactmais/components/content_video.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -39,25 +38,26 @@ class _VerticalPresentationState extends State<VerticalPresentation> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Scaffold.of(context).openDrawer();
-                      },
-                      icon: const Icon(Icons.menu_rounded),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        const text = 'Funcionalidades em construção';
-                        const snackBar = SnackBar(
-                          content: Text(text),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
-                      icon: const Icon(Icons.person),
-                    ),
-                  ]),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: const Icon(Icons.menu_rounded),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      const text = 'Funcionalidades em construção';
+                      const snackBar = SnackBar(
+                        content: Text(text),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    },
+                    icon: const Icon(Icons.person),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 450,

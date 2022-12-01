@@ -176,34 +176,3 @@ Future openBrowserURLolder({required String url}) async {
     await launch(url);
   }
 }
-
-
-
-
-
-
-//     // ListTile(
-        //     //   contentPadding: const EdgeInsets.all(0.1),
-        //     //   onTap: () {
-        //     //     final url = Uri(
-        //     //         scheme: 'mailto',
-        //     //         path: 'mailto:contato@contactmais.com.br',
-        //     //         queryParameters: {
-        //     //           'subject': 'Gostaria de saber mais sobre os produtos'
-        //     //         });
-        //     //     openBrowserURL(url: url);
-        //     //   },
-        //     //   leading: FaIcon(FontAwesomeIcons.envelope,
-        //     //       size: 20, color: Colors.black),
-        //     //   title: Container(
-        //     //     width: 25.0,
-        //     //     decoration:
-        //     //         BoxDecoration(borderRadius: BorderRadius.circular(10.0)),
-        //     //     child: Text(
-        //     //       'Mail',
-        //     //       style: GoogleFonts.roboto(
-        //     //         textStyle: const TextStyle(fontSize: 16),
-        //     //       ),
-        //     //     ),
-        //     //   ),
-        //     // ),
